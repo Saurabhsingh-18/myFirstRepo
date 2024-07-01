@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>Guess the number between 1 to 10</center>
+    <input type="text" id="val" placeholder="entervalue" />
+    <button id="btn">GuessNo</button>
+    <h1 id="mainheading"></h1>
+    <script>
+      const inputVal = document.getElementById("val");
+      const btn = document.getElementById("btn");
+      const mainheading = document.getElementById("mainheading");
+      let randomVal = Math.floor(Math.random() * 10);
+
+      btn.addEventListener("click", () => {
+        if (randomVal > inputVal.value) {
+          console.log("enter value is low");
+        }
+        if (randomVal < inputVal.value) {
+          console.log("enter value is high");
+        }
+        if (randomVal == inputVal.value) {
+          window.alert("you guess the right number");
+          mainheading.innerHTML = "";
+        }
+        // mainheading.innerHTML = randomVal;
+        console.log("hello");
+        console.log(Math.PI);
+      });
+    </script>
+  </body>
+</html>

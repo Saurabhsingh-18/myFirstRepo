@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+
+  
+
+  <style>
+    #btnshow {
+      width: "200px";
+      padding: 20px;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      display: none;
+    }
+  </style>
+  <body>
+    <p id="paraid">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+      minima atque minus eveniet quo dolor voluptates magnam blanditiis dolorum,
+      consequatur laborum. Officiis cupiditate iusto fuga provident eveniet
+      impedit ab quo!
+    </p>
+    <button onclick="clickMe()">click Me</button>
+    <button onclick="hideText()">Click To Hide</button>
+    <button onclick="displayText()">Click To Show</button>
+    <button onclick="AddtoCart()">AddTo WhitchList</button>
+
+    <br />
+    <button id="btnshow">Add to WhitchList</button>
+
+    <script>
+      function clickMe() {
+        alert("my name is karan");
+      }
+
+      // create function to hide text
+      function hideText() {
+        let para = document.getElementById("paraid");
+        para.style.display = "none";
+        AddtoCart();
+      }
+
+      // create function to display Text
+
+      function displayText() {
+        let para = document.getElementById("paraid");
+        para.style.display = "block";
+        para.style.color = "red";
+        para.style.fontSize = "30px";
+
+        AddtoCart();
+      }
+
+      // create a function to show add to cart button
+
+      function hidebtnafteronesecond() {
+        let btn = document.getElementById("btnshow");
+        btn.style.display = "none";
+      }
+
+      function allTask() {
+        hideText();
+        clickMe();
+        AddtoCart();
+      }
+      function AddtoCart() {
+        let btn = document.getElementById("btnshow");
+        btn.style.display = "block";
+
+        setTimeout(() => {
+          hidebtnafteronesecond();
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
